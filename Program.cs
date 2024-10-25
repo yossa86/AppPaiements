@@ -10,9 +10,9 @@ internal class Program
         CarteCredit achat3 = new CarteCredit(45.75, "Achat Alimentation", 782);
 
         //Affichage des détails des achats
-        achat1.AfficherDetails();
-        achat2.AfficherDetails();
-        achat3.AfficherDetails();
+        //achat1.AfficherDetails();
+        //achat2.AfficherDetails();
+        //achat3.AfficherDetails();
 
         //PAYPAL
         //Création de deux instances de PayPal
@@ -20,8 +20,24 @@ internal class Program
         PayPal buy2 = new PayPal(89.50, "Achat Vetements", "300141146@monboreal.ca");
         
         //Affichage des détails des achats
-        buy1.AfficherDetails();
-        buy2.AfficherDetails();
+        //buy1.AfficherDetails();
+        //buy2.AfficherDetails();
+
+        Utilisateur utilisateur = new Utilisateur("Christophe");
+        utilisateur.Afficherinfos();
+
+        utilisateur.AjouterPaiement(achat1);
+        utilisateur.AjouterPaiement(achat2);
+        utilisateur.AjouterPaiement(achat3);
+
+        utilisateur.AjouterPaiement(buy1);
+        utilisateur.AjouterPaiement(buy2);
+
+        //Afficher la liste
+        foreach(Paiement p in utilisateur.Paiements)
+        {
+            p.AfficherDetails();
+        }
 
 
     }
