@@ -1,4 +1,5 @@
-﻿internal class Program
+﻿using AppPaiements;
+internal class Program
 {
     private static void Main(string[] args)
     {
